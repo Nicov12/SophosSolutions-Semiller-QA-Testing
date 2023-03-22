@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="11f5809d36bcc203a9841db0d3f50ec2ac5c4f22a768ce60ac46ff7a900cf51c.html">Choose Flight On Wingo Page</a></span>
+                > <span class="truncate-60"><a
+                    href="be2c0223b0c2c616611ae4b6347222889d510a9340dbed40802578b021c1ae44.html">Fill in the fields on the wingo page </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 20-03-2023 15:04</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Choose Flight On Wingo Page</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                I want to choose a flight with the characteristics of my preference
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="bca18eb34184f466810ee7a90d04748e21a2df6dea7311083e75ce6b8ed2a2f5.html">Tag1
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="ec3644e9342d32fe427f28bfa83a3084b3999493dbafdd95c2d0cbb278b71b7f.html">Tag
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6fe0671aeea9e76b6998ee682216d11c7748a4152740df0586f3c256ecb3f5da.html">Chrome
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="59736924e81ea98f655ac8eba7cd96079d8d80131e0c4360daf32a724d0b38a0.html">Chrome, Windows
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Fill in the fields on the wingo page
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="8684e1767db6836932d0da4973e233b100547578d70b6ba5af5a9e60be414165.png" title=" Given &quot;Nico&quot; sets the Wingo url &quot;Wingo&quot;" width="1554"/>
+                <img src="8684e1767db6836932d0da4973e233b100547578d70b6ba5af5a9e60be414165.png" title=" Nico opens the browser at https://www.wingo.com/es" width="1554"/>
+                <img src="8684e1767db6836932d0da4973e233b100547578d70b6ba5af5a9e60be414165.png" title=" Given &quot;Nico&quot; sets the Wingo url &quot;Wingo&quot; (completed)" width="1554"/>
+                <img src="efc463ebb195b1cbcb6141bd4b929e90d8425130ec4d48f865d73c0cb7944fc8.png" title=" When I enter the data in the fields to search for a flight" width="1554"/>
+                <img src="efc463ebb195b1cbcb6141bd4b929e90d8425130ec4d48f865d73c0cb7944fc8.png" title=" Nico find flight" width="1554"/>
+                <img src="efc463ebb195b1cbcb6141bd4b929e90d8425130ec4d48f865d73c0cb7944fc8.png" title=" Nico clicks on Select origen" width="1554"/>
+                <img src="ee0577ddb1cd5c82a79c5c9df15f23e3c84449c565efb21da4aa1f0ac3e4a8a5.png" title=" Nico clicks on Select origen (completed)" width="1554"/>
+                <img src="ee0577ddb1cd5c82a79c5c9df15f23e3c84449c565efb21da4aa1f0ac3e4a8a5.png" title=" Nico enters 'cal' into Write origen" width="1554"/>
+                <img src="bf5ef03b981d405fd78b4dfb9223549b6560561bdda4ca79f25256df69778dd7.png" title=" Nico enters 'cal' into Write origen (completed)" width="1554"/>
+                <img src="bf5ef03b981d405fd78b4dfb9223549b6560561bdda4ca79f25256df69778dd7.png" title=" Nico clicks on option origen" width="1554"/>
+                <img src="8f876885b1f838b5b9b7d8860d3375311270c9bdd0babf6b5875af7dcef4f623.png" title=" Nico clicks on option origen (completed)" width="1554"/>
+                <img src="8f876885b1f838b5b9b7d8860d3375311270c9bdd0babf6b5875af7dcef4f623.png" title=" Nico enters 'bog' into Write destino" width="1554"/>
+                <img src="f3692aba8a2c648c6cc011187eb3f57760da6f7d99635501a053836b7422065c.png" title=" Nico enters 'bog' into Write destino (completed)" width="1554"/>
+                <img src="f3692aba8a2c648c6cc011187eb3f57760da6f7d99635501a053836b7422065c.png" title=" Nico clicks on option destino" width="1554"/>
+                <img src="332785432ac39eb02e33397ec3be45c3aac8d7558011b116040fc530fbde57dc.png" title=" Nico clicks on option destino (completed)" width="1554"/>
+                <img src="332785432ac39eb02e33397ec3be45c3aac8d7558011b116040fc530fbde57dc.png" title=" Nico clicks on option ida" width="1554"/>
+                <img src="e0e33b263ed1caa01a8a3f69cc7b50e45fe6f6e4d65b6c67705dbf79b6cf6224.png" title=" Nico clicks on option ida (completed)" width="1554"/>
+                <img src="e0e33b263ed1caa01a8a3f69cc7b50e45fe6f6e4d65b6c67705dbf79b6cf6224.png" title=" Nico clicks on option vuelta" width="1554"/>
+                <img src="f3605f18c6efd66c140ad558dffdb93ff167c5dc146a46122f1624013ffdef36.png" title=" Nico clicks on option vuelta (completed)" width="1554"/>
+                <img src="f3605f18c6efd66c140ad558dffdb93ff167c5dc146a46122f1624013ffdef36.png" title=" Nico clicks on btn search" width="1554"/>
+                <img src="bdd0c97aabf2c75e467b5e760a0f2dfea28a9b52a4966caa40c2ff54a7322118.png" title=" Nico clicks on btn search (completed)" width="1554"/>
+                <img src="bdd0c97aabf2c75e467b5e760a0f2dfea28a9b52a4966caa40c2ff54a7322118.png" title=" Nico find flight (completed)" width="1554"/>
+                <img src="bdd0c97aabf2c75e467b5e760a0f2dfea28a9b52a4966caa40c2ff54a7322118.png" title=" When I enter the data in the fields to search for a flight (completed)" width="1554"/>
+                <img src="bdd0c97aabf2c75e467b5e760a0f2dfea28a9b52a4966caa40c2ff54a7322118.png" title=" Then I visualize the flights that the page offers me and validate the message &quot;Buscar&quot;" width="1554"/>
+                <img src="bdd0c97aabf2c75e467b5e760a0f2dfea28a9b52a4966caa40c2ff54a7322118.png" title=" Then text of should be 'Buscar': <span class='success-color'>SUCCESS</span>" width="1554"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.6.15</span>
+</div>
+</body>
+</html>

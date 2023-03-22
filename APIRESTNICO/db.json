@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Nico",
+      "lastname": "Velez",
+      "age": 22
+    },
+    {
+      "id": 2,
+      "name": "Nico2",
+      "lastname": "Velez2",
+      "age": 23
+    },
+    {
+      "id": 3,
+      "name": "Nico3",
+      "lastname": "Velez3",
+      "age": 24
+    },
+    {
+      "id": 4,
+      "name": "Nico4",
+      "lastname": "Velez4",
+      "age": 25
+    }
+  ]
+}

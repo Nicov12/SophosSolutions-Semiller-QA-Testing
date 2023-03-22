@@ -1,0 +1,9 @@
+{
+   "name": "Prueba",
+   "data": {
+      "year": 2020,
+      "price": 1871.99,
+      "CPU model": "Ryzen 5",
+      "Hard disk size": "2 TB"
+   }
+}

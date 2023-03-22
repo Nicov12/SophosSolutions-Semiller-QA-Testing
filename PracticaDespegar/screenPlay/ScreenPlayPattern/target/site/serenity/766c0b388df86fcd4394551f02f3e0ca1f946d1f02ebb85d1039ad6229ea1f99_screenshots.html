@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="311c4df8d597d7afc63d01e6da75ff571a09cef3d1af5d111024bc89f107bc30.html">Title Of Your Feature</a></span>
+                > <span class="truncate-60"><a
+                    href="766c0b388df86fcd4394551f02f3e0ca1f946d1f02ebb85d1039ad6229ea1f99.html">Check flights </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-03-2023 15:29</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Title Of Your Feature</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                I want to use this template for my feature file
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="ec3644e9342d32fe427f28bfa83a3084b3999493dbafdd95c2d0cbb278b71b7f.html">Tag
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="06cdd507054f41bbbcf187298164df231d33ebe1d60201d854fe68ef303114da.html">Despegar
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="error-color">Check flights
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given the results of the flights<br>When I press the option &lt;select&gt;<br>Then I see the messages</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Index out of bounds exception: Index 0 out of bounds for length 0</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.IndexOutOfBoundsException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>com.sophossolutions.interactions.SelectOption.searchMenor(SelectOption.java:126)<br />com.sophossolutions.interactions.SelectOption.showFlights(SelectOption.java:92)<br />com.sophossolutions.interactions.SelectOption.performAs(SelectOption.java:39)<br />com.sophossolutions.task.ChooseOption.performAs(ChooseOption.java:31)<br />com.sophossolutions.stepdefinitions.DespegarFlightStepDefinition.iPressTheOption(DespegarFlightStepDefinition.java:29)<br />io.cucumber.java.Invoker.doInvoke(Invoker.java:66)<br />io.cucumber.java.Invoker.invoke(Invoker.java:24)<br />io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)<br />io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)<br />io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)<br />io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)<br />io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)<br />io.cucumber.core.runner.TestStep.run(TestStep.java:57)<br />io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)<br />io.cucumber.core.runner.TestCase.run(TestCase.java:84)<br />io.cucumber.core.runner.Runner.runPickle(Runner.java:75)<br />io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)<br />io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)<br />io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)<br />io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:259)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:59)<br />org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:98)<br />org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                <div class="panel-body">
+                    <a href="pagesource17455288851193736476.html" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="d1270473dd5547d49d2c533776280a2d0defd1f8b5064c6b4126089b8f7184a7.png" title=" 1: Check flights ({select=1})" width="1920"/>
+                <img src="d1270473dd5547d49d2c533776280a2d0defd1f8b5064c6b4126089b8f7184a7.png" title=" Given I enter the page &quot;Despegar&quot;" width="1920"/>
+                <img src="d1270473dd5547d49d2c533776280a2d0defd1f8b5064c6b4126089b8f7184a7.png" title=" Automator opens the browser at https://www.despegar.com.co/" width="1920"/>
+                <img src="d1270473dd5547d49d2c533776280a2d0defd1f8b5064c6b4126089b8f7184a7.png" title=" Given I enter the page &quot;Despegar&quot; (completed)" width="1920"/>
+                <img src="d1270473dd5547d49d2c533776280a2d0defd1f8b5064c6b4126089b8f7184a7.png" title=" When I enter the &quot;origen&quot; and the &quot;destino&quot;" width="1920"/>
+                <img src="8950002b957e345842965d41ac053fef9d5c5ce0370c57b6ffd901c1cf2abd13.png" title=" Automator set info" width="1920"/>
+                <img src="149cc54d73455491e5e441d51008ea7da1dc4a7d8290565ea4a83dcdbcae88b2.png" title=" Automator enters 'Bogot&aacute;, Colombia' into Button for search" width="1920"/>
+                <img src="ed54452c0240cc7fd5dbfecccc64da6f573e7d10b75dc92bb149762ff741c2a4.png" title=" Automator enters 'Bogot&aacute;, Colombia' into Button for search (completed)" width="1920"/>
+                <img src="ed54452c0240cc7fd5dbfecccc64da6f573e7d10b75dc92bb149762ff741c2a4.png" title=" Automator clicks on Button for search" width="1920"/>
+                <img src="a05fe3b96cf2aed83592cd02c6125b8d5fc6af5b615a9ce22060a97d48ba7888.png" title=" Automator clicks on Button for search (completed)" width="1920"/>
+                <img src="a05fe3b96cf2aed83592cd02c6125b8d5fc6af5b615a9ce22060a97d48ba7888.png" title=" Automator enters 'san' into Button for search" width="1920"/>
+                <img src="4f817c623ba078aa3fd6b0f94ca313d83ba9335b1456e3e8cd4392ef0a711f4d.png" title=" Automator enters 'san' into Button for search (completed)" width="1920"/>
+                <img src="4f817c623ba078aa3fd6b0f94ca313d83ba9335b1456e3e8cd4392ef0a711f4d.png" title=" Automator clicks on Button for search" width="1920"/>
+                <img src="0e6919be75fe4497dcae352edb0ff123874381406f18b5e535d96519ab5e771e.png" title=" Automator clicks on Button for search (completed)" width="1920"/>
+                <img src="0e6919be75fe4497dcae352edb0ff123874381406f18b5e535d96519ab5e771e.png" title=" Automator clicks on Abrir Ida" width="1920"/>
+                <img src="713c3c585401239a8942bfa945c7bace789f9c8dcf3bd2abc90010167d8d2837.png" title=" Automator clicks on Abrir Ida (completed)" width="1920"/>
+                <img src="713c3c585401239a8942bfa945c7bace789f9c8dcf3bd2abc90010167d8d2837.png" title=" Automator clicks on select day ida" width="1920"/>
+                <img src="0070b22197ebc21a22bfee1b3a1534bbb738e6d32d1e57c6afa4b7df169e2bd5.png" title=" Automator clicks on select day ida (completed)" width="1920"/>
+                <img src="0070b22197ebc21a22bfee1b3a1534bbb738e6d32d1e57c6afa4b7df169e2bd5.png" title=" Automator clicks on select day Vuelta" width="1920"/>
+                <img src="9aea490042726dff1f6c20959bc7899497a55e3eef1f126800cdb06cf00d63c2.png" title=" Automator clicks on select day Vuelta (completed)" width="1920"/>
+                <img src="9aea490042726dff1f6c20959bc7899497a55e3eef1f126800cdb06cf00d63c2.png" title=" Automator clicks on Button for search" width="1920"/>
+                <img src="d765ae1ad74e22263a3414f3a0561aa1536b5553c81ed858b18c4a7b062fe6e4.png" title=" Automator clicks on Button for search (completed)" width="1920"/>
+                <img src="d765ae1ad74e22263a3414f3a0561aa1536b5553c81ed858b18c4a7b062fe6e4.png" title=" Automator set info (completed)" width="1920"/>
+                <img src="d765ae1ad74e22263a3414f3a0561aa1536b5553c81ed858b18c4a7b062fe6e4.png" title=" When I enter the &quot;origen&quot; and the &quot;destino&quot; (completed)" width="1920"/>
+                <img src="d765ae1ad74e22263a3414f3a0561aa1536b5553c81ed858b18c4a7b062fe6e4.png" title=" Then I see the flights" width="1920"/>
+                <img src="d765ae1ad74e22263a3414f3a0561aa1536b5553c81ed858b18c4a7b062fe6e4.png" title=" Given the results of the flights" width="1920"/>
+                <img src="d765ae1ad74e22263a3414f3a0561aa1536b5553c81ed858b18c4a7b062fe6e4.png" title=" Automator opens the browser at https://www.despegar.com.co/shop/flights/results/roundtrip/BOG/SLP/2023-03-15/2023-03-20/1/0/0/NA/NA/NA/NA/NA?from=SB&amp;di=1-0" width="1920"/>
+                <img src="cf69fe6336dd58400253910d8dcd06989ab64ca25115aca445f6ee7bf258dc64.png" title=" Automator opens the browser at https://www.despegar.com.co/shop/flights/results/roundtrip/BOG/SLP/2023-03-15/2023-03-20/1/0/0/NA/NA/NA/NA/NA?from=SB&amp;di=1-0 (completed)" width="1920"/>
+                <img src="cf69fe6336dd58400253910d8dcd06989ab64ca25115aca445f6ee7bf258dc64.png" title=" Given the results of the flights (completed)" width="1920"/>
+                <img src="cf69fe6336dd58400253910d8dcd06989ab64ca25115aca445f6ee7bf258dc64.png" title=" When I press the option 1" width="1920"/>
+                <img src="cf69fe6336dd58400253910d8dcd06989ab64ca25115aca445f6ee7bf258dc64.png" title=" Automator choose option" width="1920"/>
+                <img src="cf69fe6336dd58400253910d8dcd06989ab64ca25115aca445f6ee7bf258dc64.png" title=" Automator select option" width="1920"/>
+                <img src="0d84e5bb11af289741083b20000d3736d6bf208ba7a7f060039dfcf1dc4194a9.png" title=" Show flights: Automator, 1" width="1920"/>
+                <img src="5b0c469a1953b8df7f871e616065f216856a1045080ec6b57fec3a269f877c2c.png" title=" 2: Check flights ({select=2})" width="1554"/>
+                <img src="5b0c469a1953b8df7f871e616065f216856a1045080ec6b57fec3a269f877c2c.png" title=" Given I enter the page &quot;Despegar&quot;" width="1554"/>
+                <img src="5b0c469a1953b8df7f871e616065f216856a1045080ec6b57fec3a269f877c2c.png" title=" Automator opens the browser at https://www.despegar.com.co/" width="1554"/>
+                <img src="5b0c469a1953b8df7f871e616065f216856a1045080ec6b57fec3a269f877c2c.png" title=" Given I enter the page &quot;Despegar&quot; (completed)" width="1554"/>
+                <img src="5b0c469a1953b8df7f871e616065f216856a1045080ec6b57fec3a269f877c2c.png" title=" When I enter the &quot;origen&quot; and the &quot;destino&quot;" width="1554"/>
+                <img src="5b0c469a1953b8df7f871e616065f216856a1045080ec6b57fec3a269f877c2c.png" title=" Automator set info" width="1554"/>
+                <img src="5b0c469a1953b8df7f871e616065f216856a1045080ec6b57fec3a269f877c2c.png" title=" Automator enters 'Bogot&aacute;, Colombia' into Button for search" width="1554"/>
+                <img src="a58f79e7519721a67436c16c86d7c65b729a0e47c87aee7e6819d1ab70ef66b8.png" title=" Automator enters 'Bogot&aacute;, Colombia' into Button for search (completed)" width="1554"/>
+                <img src="a58f79e7519721a67436c16c86d7c65b729a0e47c87aee7e6819d1ab70ef66b8.png" title=" Automator clicks on Button for search" width="1554"/>
+                <img src="057acaf62e51fdfb933c3fde17fba3ba2d3304021aeac1b620e4fe5518238495.png" title=" Automator clicks on Button for search (completed)" width="1554"/>
+                <img src="057acaf62e51fdfb933c3fde17fba3ba2d3304021aeac1b620e4fe5518238495.png" title=" Automator enters 'san' into Button for search" width="1554"/>
+                <img src="dbeb66dda82001dba772d8a96893002619b58098224b287f6d79414b8c6724b2.png" title=" Automator enters 'san' into Button for search (completed)" width="1554"/>
+                <img src="dbeb66dda82001dba772d8a96893002619b58098224b287f6d79414b8c6724b2.png" title=" Automator clicks on Button for search" width="1554"/>
+                <img src="abbbeb76ba022ddfd13574f57f9130e6506ff75386802fc2ff519aeaa526f820.png" title=" Automator clicks on Button for search (completed)" width="1554"/>
+                <img src="abbbeb76ba022ddfd13574f57f9130e6506ff75386802fc2ff519aeaa526f820.png" title=" Automator clicks on Abrir Ida" width="1554"/>
+                <img src="34a0155ff3f5a5453d7102090f959a931e4d5ed2c3ea5f0e5c9c377c2453e4a1.png" title=" Automator clicks on Abrir Ida (completed)" width="1554"/>
+                <img src="34a0155ff3f5a5453d7102090f959a931e4d5ed2c3ea5f0e5c9c377c2453e4a1.png" title=" Automator clicks on select day ida" width="1554"/>
+                <img src="7ede125dca662bfa504b605b31ae8bf667b22cf632c7c2e9e961b2b023750cc6.png" title=" Automator clicks on select day ida (completed)" width="1554"/>
+                <img src="7ede125dca662bfa504b605b31ae8bf667b22cf632c7c2e9e961b2b023750cc6.png" title=" Automator clicks on select day Vuelta" width="1554"/>
+                <img src="1ecabc8d21d5ba4fdee4f54a6dcbd44969a82de3cc3ddf0168672a4d0fe1ec04.png" title=" Automator clicks on select day Vuelta (completed)" width="1554"/>
+                <img src="1ecabc8d21d5ba4fdee4f54a6dcbd44969a82de3cc3ddf0168672a4d0fe1ec04.png" title=" Automator clicks on Button for search" width="1554"/>
+                <img src="ed4be605b5be56cb4ef70232247edcfaf66bc55d2def5fcb8a898276ffccac6a.png" title=" Automator clicks on Button for search (completed)" width="1554"/>
+                <img src="ed4be605b5be56cb4ef70232247edcfaf66bc55d2def5fcb8a898276ffccac6a.png" title=" Automator set info (completed)" width="1554"/>
+                <img src="ed4be605b5be56cb4ef70232247edcfaf66bc55d2def5fcb8a898276ffccac6a.png" title=" When I enter the &quot;origen&quot; and the &quot;destino&quot; (completed)" width="1554"/>
+                <img src="ed4be605b5be56cb4ef70232247edcfaf66bc55d2def5fcb8a898276ffccac6a.png" title=" Then I see the flights" width="1554"/>
+                <img src="ed4be605b5be56cb4ef70232247edcfaf66bc55d2def5fcb8a898276ffccac6a.png" title=" Given the results of the flights" width="1554"/>
+                <img src="ed4be605b5be56cb4ef70232247edcfaf66bc55d2def5fcb8a898276ffccac6a.png" title=" Automator opens the browser at https://www.despegar.com.co/shop/flights/results/roundtrip/BOG/SLP/2023-03-15/2023-03-20/1/0/0/NA/NA/NA/NA/NA?from=SB&amp;di=1-0" width="1554"/>
+                <img src="b8ac71978e569a565f3dfea81dc2047e5f0a0bffa82ef32dad0b0bbb679c3dc4.png" title=" Automator opens the browser at https://www.despegar.com.co/shop/flights/results/roundtrip/BOG/SLP/2023-03-15/2023-03-20/1/0/0/NA/NA/NA/NA/NA?from=SB&amp;di=1-0 (completed)" width="1554"/>
+                <img src="b8ac71978e569a565f3dfea81dc2047e5f0a0bffa82ef32dad0b0bbb679c3dc4.png" title=" Given the results of the flights (completed)" width="1554"/>
+                <img src="b8ac71978e569a565f3dfea81dc2047e5f0a0bffa82ef32dad0b0bbb679c3dc4.png" title=" When I press the option 2" width="1554"/>
+                <img src="b8ac71978e569a565f3dfea81dc2047e5f0a0bffa82ef32dad0b0bbb679c3dc4.png" title=" Automator choose option" width="1554"/>
+                <img src="b8ac71978e569a565f3dfea81dc2047e5f0a0bffa82ef32dad0b0bbb679c3dc4.png" title=" Automator select option" width="1554"/>
+                <img src="21a90bd96be9c694c5695f5891deeb78bacbf065ef4ca89fc3f16d2bbbeaf24e.png" title=" Show flights: Automator, 2" width="1554"/>
+                <img src="241bc964e7c3b56da875f0c8af9c9a5ca0a9ddbd248b2769155c66f676c7e2f8.png" title=" 3: Check flights ({select=3})" width="1554"/>
+                <img src="241bc964e7c3b56da875f0c8af9c9a5ca0a9ddbd248b2769155c66f676c7e2f8.png" title=" Given I enter the page &quot;Despegar&quot;" width="1554"/>
+                <img src="241bc964e7c3b56da875f0c8af9c9a5ca0a9ddbd248b2769155c66f676c7e2f8.png" title=" Automator opens the browser at https://www.despegar.com.co/" width="1554"/>
+                <img src="241bc964e7c3b56da875f0c8af9c9a5ca0a9ddbd248b2769155c66f676c7e2f8.png" title=" Given I enter the page &quot;Despegar&quot;" width="1554"/>
+                <img src="3a65b11c683e8a44ac6ecb9fa2c70bd100c652fb6a3df82955e97a9d8e3edcf0.png" title=" Given I enter the page &quot;Despegar&quot; (completed): <span class='error-color'>ERROR</span>" width="1554"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.3.0</span>
+</div>
+</body>
+</html>

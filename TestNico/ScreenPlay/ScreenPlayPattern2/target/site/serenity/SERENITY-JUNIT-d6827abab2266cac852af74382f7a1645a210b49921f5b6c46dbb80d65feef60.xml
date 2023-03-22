@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Filter prices of the flights" skipped="0" tests="3" time="32.55" timestamp="2023-03-20 02:48:49"><testcase name="Title of your scenario outline"/><testcase name="Filter prices"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:889)&#13;
+com.sophossolutions.stepdefinitions.WingoFilterPricesStepDefinition.iFilterThePrices(WingoFilterPricesStepDefinition.java:17)&#13;
+✽.I filter the prices(file:///C:/Users/nicolay.velez/OneDrive%20-%20SOPHOS%20SOLUTIONS%20SAS/Escritorio/Repositorio%20personal/ScreenplayNico/screenPlay/ScreenPlayPattern2/src/test/resources/com/sophossolutions/features/wingo_filter_prices.feature:40)&#13;
+</system-err></testcase></testsuite>

@@ -1,0 +1,116 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "success",
+        "data"
+    ],
+    "properties": {
+        "success": {
+            "type": "boolean",
+            "default": false,
+            "title": "The success Schema",
+            "examples": [
+                true
+            ]
+        },
+        "data": {
+            "type": "object",
+            "default": {},
+            "title": "The data Schema",
+            "required": [
+                "appearances",
+                "name",
+                "description",
+                "gender",
+                "race",
+                "id"
+            ],
+            "properties": {
+                "appearances": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The appearances Schema",
+                    "items": {
+                        "type": "string",
+                        "default": "",
+                        "title": "A Schema",
+                        "examples": [
+                            "https://zelda.fanapis.com/api/games/5f6ce9d805615a85623ec2d1"
+                        ]
+                    },
+                    "examples": [
+                        [
+                            "https://zelda.fanapis.com/api/games/5f6ce9d805615a85623ec2d1"]
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The name Schema",
+                    "examples": [
+                        "Linkle"
+                    ]
+                },
+                "description": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The description Schema",
+                    "examples": [
+                        "Linkle is a playable Warrior in Hyrule Warriors Legends. She can be transferred over to Hyrule Warriors as well. She wields dual Crossbows as her weapon and uses them alongside quick kicks to attack enemies. Her story is described as a side story separate from the rest of the game's plot. "
+                    ]
+                },
+                "gender": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The gender Schema",
+                    "examples": [
+                        "Female"
+                    ]
+                },
+                "race": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The race Schema",
+                    "examples": [
+                        "Hylian"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The id Schema",
+                    "examples": [
+                        "5f6d186f246bd9a0809d6188"
+                    ]
+                }
+            },
+            "examples": [{
+                "appearances": [
+                    "https://zelda.fanapis.com/api/games/5f6ce9d805615a85623ec2d1"
+                ],
+                "name": "Linkle",
+                "description": "Linkle is a playable Warrior in Hyrule Warriors Legends. She can be transferred over to Hyrule Warriors as well. She wields dual Crossbows as her weapon and uses them alongside quick kicks to attack enemies. Her story is described as a side story separate from the rest of the game's plot. ",
+                "gender": "Female",
+                "race": "Hylian",
+                "id": "5f6d186f246bd9a0809d6188"
+            }]
+        }
+    },
+    "examples": [{
+        "success": true,
+        "data": {
+            "appearances": [
+                "https://zelda.fanapis.com/api/games/5f6ce9d805615a85623ec2d1"
+            ],
+            "name": "Linkle",
+            "description": "Linkle is a playable Warrior in Hyrule Warriors Legends. She can be transferred over to Hyrule Warriors as well. She wields dual Crossbows as her weapon and uses them alongside quick kicks to attack enemies. Her story is described as a side story separate from the rest of the game's plot. ",
+            "gender": "Female",
+            "race": "Hylian",
+            "id": "5f6d186f246bd9a0809d6188"
+        }
+    }]
+}

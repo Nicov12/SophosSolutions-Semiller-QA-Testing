@@ -1,0 +1,43 @@
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+@tag
+Feature: Title of your feature
+  I want to use this template for my feature file
+
+  Background: 
+    Given Me encuentro en la pagina GuruNewTours "https://demo.guru99.com/test/newtours/"
+    When En la pagina GuruNewTours ingresa el usuario "mngr480421" y la clave "UjEqyqy" y se autentica
+    Then En la pagina GuruNewTours valido el mensaje "Login Successfully"
+
+  @tag1
+  Scenario: Title of your scenario
+    Given Entro a la pagina NewTours "New Tours Flight Page"
+    When Selecciono el apartado de Flights
+    And Selecciona las opciones
+      | type         | oneway           |
+      | pasajeros    |                2 |
+      | fromPort     | London           |
+      | monthOn      | June             |
+      | dayOn        |               13 |
+      | arriving     | Paris            |
+      | toMonth      | October          |
+      | toDay        |               15 |
+      | serviceClass | Business         |
+      | airlines     | Unified Airlines |
+    Then Valido el vuelo
